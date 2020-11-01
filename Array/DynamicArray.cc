@@ -19,11 +19,18 @@ namespace practicecpp
     }
 
     void DynamicArray::Resize(){
+        int oldCapacity = capacity;
         if(capacity == size){
             capacity = capacity*2;
         }
         if(capacity/4 >= size){
             capacity = capacity/2;
+        }
+        if(oldCapacity != capacity){
+            unique_ptr<int[] > newArray(new int[capacity]);
+            for(int i = 0; i < size; i++)
+                newArray[i] = array[i];
+            array = move(newArray);
         }
     }
 
