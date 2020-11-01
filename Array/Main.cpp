@@ -1,6 +1,9 @@
 #include <iostream>
 #include "DynamicArray.h"
+#include "DynamicArray.cc"
+
 using namespace std;
+using namespace practicecpp;
 
 int main() {
 
