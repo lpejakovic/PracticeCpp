@@ -4,9 +4,10 @@
 class DynamicArray
 {
     private:
+        int capacity;
         int size;
         int *array;
-        void Resize(int capacity);
+        void Resize();
 
     public:
         DynamicArray();
@@ -26,20 +27,28 @@ class DynamicArray
 
 /*Implementation*/
 DynamicArray::DynamicArray(){
-    DynamicArray::DynamicArray(5);
+    DynamicArray::DynamicArray(4);
 }
 
 DynamicArray::DynamicArray(int initSize){
-    size = initSize;
+    DynamicArray::size = initSize;
 }
 
+void DynamicArray::Resize(){
+    if(capacity == size){
+        capacity = capacity*2;
+    }
+    if(capacity/4 >= size){
+        capacity = capacity/2;
+    }
+}
 
 int DynamicArray::GetSize(){
-    return 1312;
+    return size;
 }
 
 int DynamicArray::GetCapacity(){
-    return 0;
+    return capacity;
 }
 bool DynamicArray::IsEmpty(){
     return false;
