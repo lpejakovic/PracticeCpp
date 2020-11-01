@@ -9,11 +9,12 @@ namespace practicecpp
         DynamicArray::DynamicArray(16);
     }
 
-    DynamicArray::DynamicArray(int initCapacity) : size(0){
+    DynamicArray::DynamicArray(int initCapacity){
         if (initCapacity < 1) {
             cout << "Reko sam NE MOŽE!!" << endl;
             exit(EXIT_FAILURE);
         }
+        size = 0;
         capacity = initCapacity;
         array = unique_ptr<int[]>(new int[capacity]);
     }
