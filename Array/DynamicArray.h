@@ -8,7 +8,7 @@ namespace practicecpp
         private:
             int capacity;
             int size;
-            int *array;
+            std::unique_ptr<int[]> array;
             void Resize();
 
         public:

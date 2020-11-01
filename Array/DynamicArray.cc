@@ -1,13 +1,21 @@
 #include "DynamicArray.h"
+#include <iostream>
+
+using namespace std;
 
 namespace practicecpp 
 {
     DynamicArray::DynamicArray(){
-        DynamicArray::DynamicArray(4);
+        DynamicArray::DynamicArray(16);
     }
 
     DynamicArray::DynamicArray(int initCapacity){
+        if (initCapacity < 1) {
+            cout << "Reko sam NE MOŽE!!" << endl;
+            exit(EXIT_FAILURE);
+        }
         capacity = initCapacity;
+        array = unique_ptr<int[]>(new int[capacity]);
     }
 
     void DynamicArray::Resize(){
