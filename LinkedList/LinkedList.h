@@ -12,11 +12,7 @@ namespace practicecpp
             ListNode<T> *head;
 
         public:
-            ListNode(T value);
-            T GetData() { return data; }
-            ListNode<T> *GetNext() { return next; }
-            void SetData(T value) { data = value; }
-            void SetNext(ListNode<T> *node){ next = node; }
+            LinkedList();
     };
 }
 
