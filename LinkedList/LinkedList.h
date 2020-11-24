@@ -1,4 +1,4 @@
-#include "ListNode.h"
+#include "LLNode.h"
 
 #ifndef LINKEDLIST_H_
 #define LINKEDLIST_H_
@@ -9,7 +9,7 @@ namespace practicecpp
     class LinkedList
     {
         private:
-            ListNode<T> *head;
+            LLNode<T> *head;
 
         public:
             LinkedList():head(nullptr){}
