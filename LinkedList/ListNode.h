@@ -11,7 +11,7 @@ namespace practicecpp
             ListNode<T> *next;
 
         public:
-            ListNode(T value) : next(nullptr), data(value) {};
+            ListNode(T value) : next(nullptr), data(value) {}
             T GetData() { return data; }
             ListNode<T> *GetNext() { return next; }
             void SetData(T value) { data = value; }
