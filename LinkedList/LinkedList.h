@@ -12,7 +12,21 @@ namespace practicecpp
             ListNode<T> *head;
 
         public:
-            LinkedList();
+            LinkedList():head(nullptr){}
+            int GetSize();
+            bool IsEmpty();
+            T GetValueByIndex(int index);
+            void PushFront(T value);
+            T PopFront();
+            void PushBack(T value);
+            T PopBack();
+            T GetFirst();
+            T GetLast();
+            void InsertAtIndex(int index, T value);
+            void EraseAtIndex(int index);
+            void GetFromBack(int offset);
+            void Reverse();
+            void RemoveValue(T value);
     };
 }
 
