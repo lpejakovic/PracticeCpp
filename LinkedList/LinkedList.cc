@@ -8,7 +8,7 @@ namespace practicecpp
     int LinkedList<T>::GetSize(){
         int size = 0;
 
-        ListNode<T> node = head;
+        LLNode<T> node = head;
         while (node)
         {
             node = node.next();
@@ -27,7 +27,7 @@ namespace practicecpp
 	T LinkedList<T>::GetValueByIndex(int index) {
         int currentIndex = 0;
 
-        ListNode<T> node = head;
+        LLNode<T> node = head;
 		while(node) {
 			if (currentIndex == index) {
 				return node.GetData();
@@ -40,8 +40,8 @@ namespace practicecpp
 
     template <class T>
 	void LinkedList<T>::PushFront(T value) {
-		ListNode<T> newHead = new LinkedListNode<T>(value);
-		ListNode<T> oldHead = head;
+		LLNode<T> newHead = new LLNode<T>(value);
+		LLNode<T> oldHead = head;
 
 		head = newHead;
 		newHead.setNext(oldHead);
