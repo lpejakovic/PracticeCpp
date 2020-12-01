@@ -9,10 +9,10 @@ namespace practicecpp
     int LinkedList<T>::GetSize(){
         int size = 0;
 
-        LLNode<T> node = *head;
+        LLNode<T> *node = head;
         while (node)
         {
-            node = *node.GetNext();
+            node = node->GetNext();
             size++;
         }
         return size;
