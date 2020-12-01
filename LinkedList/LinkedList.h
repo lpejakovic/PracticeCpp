@@ -23,8 +23,8 @@ namespace practicecpp
             T GetFirst();
             T GetLast();
             void InsertAtIndex(int index, T value);
-            void EraseAtIndex(int index);
-            void GetFromBack(int offset);
+            void RemoveAtIndex(int index);
+            T GetValueFromBack(int offset);
             void Reverse();
             void RemoveValue(T value);
     };
