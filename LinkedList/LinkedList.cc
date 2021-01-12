@@ -9,7 +9,7 @@ namespace practicecpp
     int LinkedList<T>::GetSize(){
         int size = 0;
 
-        LLNode<T> *node = head;
+        LLNode<T> node = head;
         while (node)
         {
             node = node->GetNext();
@@ -38,7 +38,7 @@ namespace practicecpp
 		}
 
 		cout << "Index out of bounds" << endl;
-    	exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
     template <class T>
@@ -79,6 +79,11 @@ namespace practicecpp
 
 	template <class T>
 	T LinkedList<T>::PopBack() {
+		if(head == nullptr){
+			cout << "List empty" << endl;
+    		exit(EXIT_FAILURE);
+		}
+
 		LLNode<T> *node = head;
 
 		while(node->GetNext()->GetNext()) {
@@ -91,13 +96,22 @@ namespace practicecpp
 		return retVal;
 	}
 
-		template <class T>
+	template <class T>
 	T LinkedList<T>::GetFirst() {
+		if(head == nullptr){
+			cout << "List empty" << endl;
+    		exit(EXIT_FAILURE);
+		}
 		return head->GetData();
 	}
 
 	template <class T>
 	T LinkedList<T>::GetLast() {
+		if(head == nullptr){
+			cout << "List empty" << endl;
+    		exit(EXIT_FAILURE);
+		}
+
 		LLNode<T> *node = head;
 
 		while(node->GetNext()) {
@@ -118,6 +132,11 @@ namespace practicecpp
 			i++;
 		}
 
+		if(i != index){
+			cout << "Bad Index" << endl;
+    		exit(EXIT_FAILURE);
+		}
+
 		LLNode<T> *oldNext = node->GetNext();
 		node->SetNext(newNode);
 		newNode->SetNext(oldNext);
@@ -125,6 +144,11 @@ namespace practicecpp
 
 	template <class T>
 	void LinkedList<T>::RemoveAtIndex(int index) {
+		if(head == nullptr){
+			cout << "List empty" << endl;
+    		exit(EXIT_FAILURE);
+		}
+
 		LLNode<T> *node = head;
 		int currentIndex = 0;
 
@@ -140,6 +164,11 @@ namespace practicecpp
 
 	template <class T>
 	T LinkedList<T>::GetValueFromBack(int offset) {
+		if(head == nullptr || n < ){
+			cout << "List empty" << endl;
+    		exit(EXIT_FAILURE);
+		}		
+		
 		LLNode<T> *node = head;
 		int size = this->GetSize();
 		return this->GetValueByIndex(size - offset - 1);
