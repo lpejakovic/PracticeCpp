@@ -9,7 +9,7 @@ namespace practicecpp
     int LinkedList<T>::GetSize(){
         int size = 0;
 
-        LLNode<T> node = head;
+        LLNode<T> *node = head;
         while (node)
         {
             node = node->GetNext();
@@ -67,7 +67,7 @@ namespace practicecpp
 	
 	template <class T>
 	void LinkedList<T>::PushBack(T value) {
-		LLNode<T> newNode = new LLNode<T>(value);
+		LLNode<T> *newNode = new LLNode<T>(value);
 		LLNode<T> *node = head;
 
 		while(node->GetNext()) {

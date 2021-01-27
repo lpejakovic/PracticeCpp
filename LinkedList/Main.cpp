@@ -1,9 +1,13 @@
-#include "LinkedList.h"
+#include "LinkedListTest.cc"
 #include "LinkedList.cc"
-#include <iostream>
+#include "LinkedList.h"
+#include "LinkedListTest.h"
 using namespace std;
+using namespace practicecpp;
 
 int main() {
-	cout << "Herro Worrd" << endl;
+	LinkedListTest disTest;
+	disTest.performTests();
+	cout << "Ales gut; Gir REKT LinkedList!s" << endl;
 	return 0;
 }
